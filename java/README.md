@@ -1,5 +1,6 @@
-# My VŠB-TUO projects (Java)
-Source codes (Java) of my projects created during my studies at The Technical University of Ostrava (VŠB).\
+# My VŠB-TUO projects (Java, Spring, Hibernate, JPA, JDBC, REST)
+Source codes (Java, Spring, Hibernate, JPA, JDBC, REST) of my projects created during my studies at The Technical University of Ostrava (VŠB-TUO).
+
 *Some comments may be written in Czech as it is my mother tongue in which I also attended the studies.*
 
 ## These projects were part of the following subjects:

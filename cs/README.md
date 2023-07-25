@@ -1,5 +1,6 @@
-# My VŠB-TUO projects (C#, ASP.NET, SQL)
-Source codes (C#, ASP.NET, SQL) of my projects created during my studies at The Technical University of Ostrava (VŠB).\
+# My VŠB-TUO projects (C#, .NET, ASP.NET Core, MSSQL)
+Source codes (C#, .NET, ASP.NET Core, MSSQL) of my projects created during my studies at The Technical University of Ostrava (VŠB-TUO).
+
 *Some comments may be written in Czech as it is my mother tongue in which I also attended the studies.*
 
 ## These projects were part of the following subjects:
