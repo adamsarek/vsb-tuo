@@ -1,0 +1,118 @@
+\chapter{Projekt}
+Jednotlivé sekce přílohy byly vytvořeny za účelem doplnění zbývajících bodů požadavků předmětu Elektronické publikace. Ostatní požadavky již byly splněny v rámci samotného textu práce.
+
+% Doplnění - zvýrazňování textu
+\section{Zvýrazňování textu}
+\textsc{Text psaný kapitálkami}
+
+
+
+% Doplnění - výčtová prostředí
+\section{Výčtová prostředí}
+\begin{enumerate}
+    \item První
+    \item Druhý
+    \item Třetí
+\end{enumerate}
+
+\newcounter{ListCounter}
+\begin{list}{Část \Roman{ListCounter}:}{\usecounter{ListCounter}}
+    \item Úvod
+    \item Vypracování
+    \item Závěr
+\end{list}
+
+
+
+% Doplnění - komentáře
+\section{Komentáře}
+\begin{comment}
+    {\LARGE Obrovský text, který ale není vidět}
+    \textit{Stejně tento vložený soubor!}
+    \input{Chapters/Introduction.tex}
+\end{comment}
+
+
+
+% Doplnění - vkládání vzorců
+\section{Vkládání vzorců}
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+
+
+% Doplnění - sazba indexu
+\section{Sazba indexu}
+Tento text je napsán v jazyce \LaTeX\index{\LaTeX}, který slouží k sazbě\index{sazba} dokumentu formy bakalářské práce\index{bakalářská práce} a také projektu do předmětu Elektronická publikace\index{ELP}.
+
+
+
+% Doplnění - vkládání grafů z GNUplot
+\section{Vkládání grafů z GNUplot}
+Graf matematické funkce $x^2$:
+
+\begin{gnuplot}[terminal=pdf,terminaloptions=color]
+    unset key
+    set samples 1000
+    set format '%g'
+    set xlabel "x"
+    set ylabel "y"
+    set xrange [-10:10]
+    set yrange [0:100]
+    plot x**2
+\end{gnuplot}
+
+
+
+% Doplnění - kreslení pomocí balíčku graphicx
+\section{Kreslení pomocí balíčku graphicx}
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[height=0.5\textwidth, angle=80]{Figures/PhoneVersion.jpg}
+        \caption{Obrázek otočený o 80\%}
+        \label{fig:graphicx}
+    \end{center}
+\end{figure}
+
+
+
+% Doplnění - sazba not
+\section{Sazba not}
+\begin{music}
+    %\smallmusicsize
+    \instrumentnumber{1}
+    \setstaffs1{1}
+    \generalmeter{\meterC}
+    \nobarnumbers
+    \startextract
+    % bar 1
+    \Notes \qu c \en                            % C
+    \notes \ibu1d2\qb1d\tbu1\qb1e \en           % beamed DE
+    \notes \ibu1g2\qb1f\qb1g%
+        \qb1{'a}\tbu1\qb1b \en                  % beamed FGAB
+    \bar % bar 2
+    \Notes \ql{'c} \en                          % c
+    \notes \ibu1{'b}{-3}%
+        \qb1b\tbu1\qb1a \en                     % beamed BA
+    \notes \ibu1{g}{-3}%
+        \qb1g\qb1f\qb1e\tbu1\qb1d \en           % beamed GFED
+    \bar % bar 3
+    \notes \ibu1f0\qb1c\qb1g\qb1e\tbu1\qb1g%    % beamed CGEG
+        \ibu1f0\qb1c\qb1g\qb1e\tbu1\qb1g \en    % beamed CGEG
+    \bar % bar 4
+    \Notes \qu c\qu e\qu c\qp \en               % CEC
+    \endextract
+\end{music}
+
+
+
+% Doplnění - sazba exotických druhů písma
+\section{Sazba exotických druhů písma}
+\begin{itemize}
+    %\item {\fontfamily{accanthis}\selectfont Písmo Accanthis}
+    \item {\fontfamily{calligra}\selectfont Písmo Calligra}
+    \item {\punkfamily\selectfont Písmo Punk}
+    \item {\foekfamily\selectfont PISMO FOEKFONT}
+\end{itemize}
+\endinput

@@ -1,0 +1,99 @@
+% Nejprve uvedeme tridu dokumentu s volbami
+\documentclass[czech,bachelor]{diploma}
+% Dalsi doplnujici baliky maker
+\usepackage[autostyle=true,czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
+\usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografie
+\let\biblatexaddspace\addspace
+
+\usepackage{dcolumn} % sloupce tabulky s ciselnymi hodnotami
+\usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
+\usepackage[cpp]{diplomalst}
+
+\usepackage{comment}
+\usepackage{imakeidx}
+\usepackage[miktex]{gnuplottex}
+\usepackage{graphicx}
+\usepackage{musixtex}
+\usepackage{calligra}
+\usepackage{punk}
+\usepackage{foekfont}
+
+\makeindex[columns=1, title=Rejstřík, intoc]
+
+% Zadame pozadovane vstupy pro generovani titulnich stran.
+\ThesisAuthor{Adam Šárek}
+
+\ThesisSupervisor{Ing. Svatopluk Štolfa, Ph.D.}
+
+\CzechThesisTitle{Virtuální sdílená tabule}
+
+\EnglishThesisTitle{Whiteboard Online Sharing Tool}
+
+\SubmissionYear{2021}
+
+\CzechAbstract{Cílem této práce je vytvoření moderní, responzivní webové aplikace sdílené virtuální tabule. Práce se zaměřuje na optimalizaci pro plynulý chod aplikace a umožňuje tak spolupráci více uživatelů. Důraz je kladen také na podporu více typů zařízení. Práce se inspiruje několika existujícími weby, které dále rozšiřuje. Aplikace nabízí jednoduché nástroje, které umožňují její využití v širokém spektru oblastí. Každá tabule má dva základní režimy přístupu (úpravy a zobrazení), z nichž každý má svůj vlastní odkaz. Výsledkem práce je funkční řešení pro vytváření a sdílení virtuálních tabulí.}
+
+\CzechKeywords{API; Canvas API; Fetch API; WebSockets; MySQL; JSON; Web workers; HTML; JavaScript; PHP}
+
+\EnglishAbstract{The goal of this work is to create a modern, responsive web application for a shared virtual whiteboard. The work focuses on optimization for the smooth running of the application and thus allows the cooperation of multiple users. Emphasis is also placed on supporting multiple types of devices. The work is inspired by several existing sites, which it further extends. The application offers simple tools that allow its use in a wide range of areas. Each whiteboard has two basic access modes (editing and viewing), each with its own link. The result is a functional solution for creating and sharing virtual whiteboards.}
+
+\EnglishKeywords{API; Canvas API; Fetch API; WebSockets; MySQL; JSON; Web workers; HTML; JavaScript; PHP}
+
+\AddAcronym{API}{Application Programming Interface}
+\AddAcronym{JSON}{JavaScript Object Notation}
+\AddAcronym{HTML}{Hyper Text Markup Language}
+\AddAcronym{DOM}{Document Object Model}
+\AddAcronym{URL}{Uniform Resource Locator}
+\AddAcronym{PHP}{PHP: Hypertext Preprocessor}
+
+\addbibresource{Bibliography.bib}
+
+% Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
+\newcolumntype{d}[1]{D{,}{,}{#1}}
+
+% Sloppypar without changing indentation
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+
+% Dalsi vrstva zanoreni
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\\noindent}
+
+% Podpora jazyka JavaScript v lstlisting
+\lstdefinelanguage{JavaScript}{
+	morekeywords=[1]{ break, continue, delete, else, for, function, if, in, new, return, this, typeof, var, void, while, with },
+	% Literals, primitive types, and reference types.
+	morekeywords=[2]{ false, null, true, boolean, number, undefined, Array, Boolean, Date, Math, Number, String, Object },
+	% Built-ins.
+	morekeywords=[3]{ eval, parseInt, parseFloat, escape, unescape },
+	sensitive,
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morecomment=[s]{/**}{*/}, % JavaDoc style comments
+	morestring=[b]',
+	morestring=[b]"
+}[keywords, comments, strings]
+
+
+% Zacatek dokumentu
+\begin{document}
+
+% Nechame vysazet titulni strany.
+\MakeTitlePages
+
+% A nasleduje text zaverecne prace.
+\input{Chapters/Introduction.tex}
+\input{Chapters/Chapter1.tex}
+\input{Chapters/Chapter2.tex}
+\input{Chapters/Chapter3.tex}
+\input{Chapters/Conclusion.tex}
+
+% Prilohy
+\appendix
+\input{Chapters/Appendix.tex}
+
+% Seznam literatury
+\let\addspace\biblatexaddspace
+\printbibliography[title={Literatura}, heading=bibintoc]
+
+% Index
+\printindex
+\end{document}

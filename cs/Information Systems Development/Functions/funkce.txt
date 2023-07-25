@@ -1,0 +1,32 @@
+Cela
+- přidání - ředitel
+- seznam - ředitel, zaměstnanec
+- úprava - ředitel
+- detail - ředitel, zaměstnanec
+
+Zaměstnanec
+- přidání - ředitel
+- seznam - ředitel
+- úprava - ředitel
+- propustit - ředitel
+- detail - ředitel
+
+Vězeň
+- přidání - ředitel, zaměstnanec
+- seznam - ředitel, zaměstnanec
+- úprava - ředitel, zaměstnanec
+- propustit - ředitel
+- detail - ředitel, zaměstnanec
+
+Návštěva
+- přidání - ředitel, zaměstnanec
+- seznam - ředitel, zaměstnanec
+- úprava - ředitel, zaměstnanec
+- detail - ředitel, zaměstnanec
+
+Návštěvník
+- přidání - ředitel, zaměstnanec
+- seznam - ředitel, zaměstnanec
+- úprava - ředitel, zaměstnanec
+- zakázání - ředitel
+- detail - ředitel, zaměstnanec

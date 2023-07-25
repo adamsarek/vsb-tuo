@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${pageTitle}">Vehicle Leasing Database</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon.png"/>
+		<link rel="stylesheet" href="../../stylesheet.css"/>
+	</head>
+	<body>
+		<a id="back" title="Back" onclick="history.back()"></a>
+		<a id="account" th:if="${accountId != null}" th:href="@{/api/accounts/{id}(id=${accountId})}" title="Account"></a>
+		<a id="signOut" th:if="${accountId != null}" href="/sign-out" title="Sign out"></a>
+		<h1 th:text="${pageTitle}">Vehicle Leasing Database</h1>
+		<div class="content padding">
+			<form method="post" th:object="${vehicle}">
+				<input type="hidden" th:field="*{id}" required>
+				<div><b>Brand:</b><input type="text" size="32" minlength="1" maxlength="32" th:field="*{brand}" required autofocus></div>
+				<div><b>Model:</b><input type="text" size="32" minlength="1" maxlength="32" th:field="*{model}" required></div>
+				<div><b>Model Year:</b><input type="number" size="4" min="1886" th:field="*{modelYear}" required></div>
+				<div><b>Weight (kg):</b><input type="number" size="6" min="0" step="any" th:field="*{weight}" required></div>
+				<div><b>Vehicle Type:</b><select th:field="*{vehicleType}" required>
+					<option th:value="1">Car</option>
+					<option th:value="2">Truck</option>
+				</select></div>
+				<div class="car hidden"><b>Trunk:</b><select th:field="${car.trunkValue}" required disabled>
+					<option th:value="0">None</option>
+					<option th:value="1">Rear</option>
+					<option th:value="2">Front</option>
+					<option th:value="3">Both</option>
+				</select></div>
+				<div class="truck hidden"><b>Trailer Count:</b><select th:field="${truck.trailerCount}" required disabled>
+					<option th:value="0">0</option>
+					<option th:value="1">1</option>
+					<option th:value="2">2</option>
+					<option th:value="3">3</option>
+					<option th:value="4">4</option>
+				</select></div>
+				<div><input type="submit" th:value="${formButtonValue}"></div>
+			</form>
+		</div>
+		<script>
+		const vehicleTypes = {
+			1: 'car',
+			2: 'truck'
+		};
+		
+		function vehicleType() {
+			const e = document.getElementById('vehicleType');
+			const vehicleTypesKeys = Object.keys(vehicleTypes);
+			const vehicleTypesValues = Object.values(vehicleTypes);
+			
+			for(let i = 0; i < vehicleTypesKeys.length; i++) {
+				// Enable the right inputs
+				if(vehicleTypesKeys[i] == e.value) {
+					// Form
+					document.querySelector('form').action = "/edit/" + vehicleTypesValues[i];
+					
+					// Show and enable
+					document.querySelectorAll('.' + vehicleTypesValues[i]).forEach(el => {
+						el.classList.remove('hidden');
+						el.querySelector('input, select').disabled = false;
+					});
+				}
+				// Disable the others
+				else {
+					// Hide and disable
+					document.querySelectorAll('.' + vehicleTypesValues[i]).forEach(el => {
+						el.classList.add('hidden');
+						el.querySelector('input, select').disabled = true;
+					});
+				}
+			}
+		}
+		
+		// Vehicle type at startup
+		document.getElementById('vehicleType').onchange = () => { vehicleType(); };
+		vehicleType();
+		</script>
+	</body>
+</html>

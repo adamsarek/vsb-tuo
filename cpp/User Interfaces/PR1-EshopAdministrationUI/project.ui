@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Project</class>
+ <widget class="QMainWindow" name="Project">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Administrace e-shopu</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="centralWidgetGridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="products">
+       <attribute name="title">
+        <string>Produkty</string>
+       </attribute>
+       <layout class="QGridLayout" name="productsGridLayout">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="productsLayout" columnstretch="1,1">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="productsSearchGroupBox">
+            <property name="title">
+             <string>Vyhledat produkt</string>
+            </property>
+            <layout class="QGridLayout" name="productsSearchGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="productsSearchLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="productsSearchSearchButton">
+                 <property name="text">
+                  <string>Vyhledat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QPushButton" name="productsSearchResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="productsSearchLeftSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="3">
+                <spacer name="productsSearchRightSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="0" colspan="4">
+                <widget class="QLineEdit" name="productsSearchCodeBox"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="3">
+           <widget class="QGroupBox" name="productsAddGroupBox">
+            <property name="title">
+             <string>Přidat produkt</string>
+            </property>
+            <layout class="QGridLayout" name="productsAddGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="productsAddLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="9" column="3">
+                <widget class="QRadioButton" name="productsAddHideFalseRadio">
+                 <property name="text">
+                  <string>NE</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddColorBox"/>
+               </item>
+               <item row="2" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddCodeBox"/>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddPriceLabel">
+                 <property name="text">
+                  <string>Cena (s DPH)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddDateBox"/>
+               </item>
+               <item row="0" column="2" colspan="2">
+                <widget class="QComboBox" name="productsAddCategoryComboBox"/>
+               </item>
+               <item row="8" column="0" colspan="4">
+                <widget class="QTextEdit" name="productsAddDescriptionBox"/>
+               </item>
+               <item row="7" column="0" colspan="4">
+                <widget class="QLabel" name="productsAddDescriptionLabel">
+                 <property name="text">
+                  <string>Podrobnosti</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddCodeLabel">
+                 <property name="text">
+                  <string>Kód produktu</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddWeightBox"/>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddColorLabel">
+                 <property name="text">
+                  <string>Barva</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddNameLabel">
+                 <property name="text">
+                  <string>Název produktu</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddDateLabel">
+                 <property name="text">
+                  <string>Datum výroby</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddNameBox"/>
+               </item>
+               <item row="9" column="2">
+                <widget class="QRadioButton" name="productsAddHideTrueRadio">
+                 <property name="text">
+                  <string>ANO</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsAddPriceBox"/>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddWeightLabel">
+                 <property name="text">
+                  <string>Váha (kg)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddCategoryLabel">
+                 <property name="text">
+                  <string>Kategorie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0" colspan="2">
+                <widget class="QLabel" name="productsAddHideLabel">
+                 <property name="text">
+                  <string>Skrýt</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="2">
+                <widget class="QPushButton" name="productsAddResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="1">
+                <widget class="QPushButton" name="productsAddAddButton">
+                 <property name="text">
+                  <string>Přidat</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="productsRemoveGroupBox">
+            <property name="title">
+             <string>Odebrat produkt</string>
+            </property>
+            <layout class="QGridLayout" name="productsRemoveGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="productsRemoveLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="productsRemoveRemoveButton">
+                 <property name="text">
+                  <string>Odebrat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <spacer name="productsRemoveLeftSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="productsRemoveResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <spacer name="productsRemoveRightSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="productsRemoveCodeLabel">
+                 <property name="text">
+                  <string>Kód produktu</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLineEdit" name="productsRemoveCodeBox"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <spacer name="productsRightBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <spacer name="productsBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>1000</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="categories">
+       <attribute name="title">
+        <string>Kategorie</string>
+       </attribute>
+       <layout class="QGridLayout" name="categoriesGridLayout">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="categoriesLayout" columnstretch="1,1">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0" rowspan="2">
+           <widget class="QGroupBox" name="categoriesAddGroupBox">
+            <property name="title">
+             <string>Přidat kategorii</string>
+            </property>
+            <layout class="QGridLayout" name="categoriesAddGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="categoriesAddLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="3" column="0" colspan="4">
+                <widget class="QTextEdit" name="categoriesAddDescriptionBox"/>
+               </item>
+               <item row="4" column="3">
+                <widget class="QRadioButton" name="categoriesAddHideFalseRadio">
+                 <property name="text">
+                  <string>NE</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="categoriesAddNameLabel">
+                 <property name="text">
+                  <string>Název kategorie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="categoriesAddCategoryLabel">
+                 <property name="text">
+                  <string>Vložit do kategorie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QRadioButton" name="categoriesAddHideTrueRadio">
+                 <property name="text">
+                  <string>ANO</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QPushButton" name="categoriesAddResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QPushButton" name="categoriesAddAddButton">
+                 <property name="text">
+                  <string>Přidat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="QLabel" name="categoriesAddHideLabel">
+                 <property name="text">
+                  <string>Skrýt</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLineEdit" name="categoriesAddNameBox"/>
+               </item>
+               <item row="0" column="2" colspan="2">
+                <widget class="QComboBox" name="categoriesAddCategoryComboBox"/>
+               </item>
+               <item row="2" column="0" colspan="4">
+                <widget class="QLabel" name="categoriesAddDescriptionLabel">
+                 <property name="text">
+                  <string>Podrobnosti</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="categoriesRemoveGroupBox">
+            <property name="title">
+             <string>Odebrat kategorii</string>
+            </property>
+            <layout class="QGridLayout" name="categoriesRemoveGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="categoriesRemoveLayout" columnstretch="1,1,1,1,1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="2" column="5">
+                <spacer name="categoriesRemoveRight1Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="4" colspan="4">
+                <widget class="QComboBox" name="categoriesRemoveCategoryComboBox"/>
+               </item>
+               <item row="2" column="7">
+                <spacer name="categoriesRemoveRight3Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0">
+                <spacer name="categoriesRemoveLeft1Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0" colspan="4">
+                <widget class="QLabel" name="categoriesRemoveCategoryLabel">
+                 <property name="text">
+                  <string>Kategorie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <spacer name="categoriesRemoveLeft3Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="6">
+                <spacer name="categoriesRemoveRight2Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="3" colspan="2">
+                <widget class="QPushButton" name="categoriesRemoveRemoveButton">
+                 <property name="text">
+                  <string>Odebrat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <spacer name="categoriesRemoveLeft2Spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <spacer name="categoriesRightBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <spacer name="categoriesBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>1000</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="orders">
+       <attribute name="title">
+        <string>Objednávky</string>
+       </attribute>
+       <layout class="QGridLayout" name="ordersGridLayout">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="ordersLayout" columnstretch="1,1">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="ordersSearchGroupBox">
+            <property name="title">
+             <string>Vyhledat objednávku</string>
+            </property>
+            <layout class="QGridLayout" name="ordersSearchGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="ordersSearchLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="1" column="0">
+                <spacer name="ordersSearchLeftSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="2">
+                <widget class="QPushButton" name="ordersSearchResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="3">
+                <spacer name="ordersSearchRightSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="ordersSearchSearchButton">
+                 <property name="text">
+                  <string>Vyhledat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="4">
+                <widget class="QLineEdit" name="ordersSearchIDBox"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="ordersRemoveGroupBox">
+            <property name="title">
+             <string>Odebrat objednávku</string>
+            </property>
+            <layout class="QGridLayout" name="ordersRemoveGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="ordersRemoveLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="ordersRemoveIDLabel">
+                 <property name="text">
+                  <string>ID objednávky</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <spacer name="ordersRemoveRightSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0">
+                <spacer name="ordersRemoveLeftSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="ordersRemoveResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="ordersRemoveRemoveButton">
+                 <property name="text">
+                  <string>Odebrat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersRemoveIDBox"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="3">
+           <widget class="QGroupBox" name="ordersAddGroupBox">
+            <property name="title">
+             <string>Přidat objednávku</string>
+            </property>
+            <layout class="QGridLayout" name="ordersAddGroupBoxGridLayout">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="ordersAddLayout" columnstretch="1,1,1,1">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="6" column="2">
+                <widget class="QPushButton" name="ordersAddResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QPushButton" name="ordersAddAddButton">
+                 <property name="text">
+                  <string>Přidat</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddPhoneLabel">
+                 <property name="text">
+                  <string>Telefon</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddAddressLabel">
+                 <property name="text">
+                  <string>Adresa</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddLastNameLabel">
+                 <property name="text">
+                  <string>Příjmení</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddFirstNameLabel">
+                 <property name="text">
+                  <string>Jméno</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddQuantityLabel">
+                 <property name="text">
+                  <string>Počet kusů</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="ordersAddProductLabel">
+                 <property name="text">
+                  <string>Produkt</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersAddPhoneBox"/>
+               </item>
+               <item row="4" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersAddAddressBox"/>
+               </item>
+               <item row="3" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersAddLastNameBox"/>
+               </item>
+               <item row="2" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersAddFirstNameBox"/>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLineEdit" name="ordersAddQuantityBox"/>
+               </item>
+               <item row="0" column="2" colspan="2">
+                <widget class="QComboBox" name="ordersAddProductComboBox"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <spacer name="ordersRightBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <spacer name="ordersBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>1000</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Soubor</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>Zobrazení</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Nastavení</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Nápověda</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

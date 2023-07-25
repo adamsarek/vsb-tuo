@@ -1,0 +1,65 @@
+body {
+	font: 14px 'Courier New';
+	margin: 0;
+}
+table {
+	background: #EEE;
+	border-radius: 1rem;
+	width: 640px;
+	margin: 1rem;
+	table-layout: fixed;
+}
+table td {
+	width: 50%;
+}
+thead td {
+	padding: 1rem 1rem 0;
+}
+tbody th {
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
+}
+tbody td {
+	padding: 0 1rem;
+}
+tfoot td {
+	padding: 1rem;
+}
+input, button {
+	border: 1px solid #AAA;
+	border-radius: 1rem;
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	box-sizing: border-box;
+}
+input[type="submit"], button {
+	font-weight: bold;
+	font-size: 0.8rem;
+	font-family: inherit;
+	background: #DDD;
+}
+input[type="submit"]:not([disabled]):hover, button:not([disabled]):hover {
+	background: #CCC;
+}
+button[disabled] {
+	cursor: wait;
+}
+label {
+	margin-bottom: 0.25rem;
+	display: inline-block;
+}
+hr {
+	background-color: #AAA;
+	border: 0;
+	height: 1px;
+	margin: 1rem 0;
+}
+div {
+	white-space: nowrap;
+}
+#status, #successAttempt {
+	color: #080;
+}
+#status.error {
+	color: #800;
+}

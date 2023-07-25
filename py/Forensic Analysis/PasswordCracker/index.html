@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="stylesheet.css">
+		<script>
+		"use strict";
+
+		//const alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
+		let alphabet = "0123456789";
+		let startTimestamp;
+		let timeInterval;
+		let lastAttemptMemory = "";
+		let attemptCountMemory = 0;
+
+		function difficultyChange(el) {
+			if(!document.getElementById("crackButton").disabled) {
+				switch(el.value) {
+					case '2':
+						alphabet = "abcdefghijklmnopqrstuvwxyz";
+						document.getElementById("alphabet").innerHTML = "a-z";
+						break;
+					case '3':
+						alphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+						document.getElementById("alphabet").innerHTML = "0-9a-z";
+						break;
+					case '4':
+						alphabet = "0123456789abcdefghijklmnopqrstuvwxyz!+,-.:;?_";
+						document.getElementById("alphabet").innerHTML = "0-9a-z!+,-.:;?_";
+						break;
+					default:
+						alphabet = "0123456789";
+						document.getElementById("alphabet").innerHTML = "0-9";
+						break;
+				}
+				document.getElementById("crackButton").innerHTML = "Crack";
+			}
+		}
+
+		function pad(n, z=2) {
+			return ('00' + n).slice(-z);
+		}
+
+		function getTime(inputMs) {
+			let s = inputMs;
+			let ms = s % 1000;
+			s = (s - ms) / 1000;
+			let secs = s % 60;
+			s = (s - secs) / 60;
+			let mins = s % 60;
+			let hrs = (s - mins) / 60;
+
+			if(inputMs < (60 * 60 * 1000)) {
+				return mins + ':' + pad(secs);
+			}
+			else {
+				return hrs + ':' + pad(mins) + ':' + pad(secs);
+			}
+		}
+
+		function showStats() {
+			if(startTimestamp) {
+				document.getElementById("time").innerHTML = getTime(Date.now() - startTimestamp);
+			}
+			else {
+				document.getElementById("time").innerHTML = getTime(0);
+			}
+			document.getElementById("attemptCount").innerHTML = attemptCountMemory;
+			document.getElementById("lastAttempt").innerHTML = lastAttemptMemory;
+		}
+
+		function nextAttempt(lastAttempt="") {
+			if(lastAttempt.length == 0) {
+				lastAttempt = alphabet[0];
+			}
+			else {
+				for(let i = lastAttempt.length - 1; i >= 0; i--) {
+					// Current position character up
+					if(alphabet.indexOf(lastAttempt[i]) + 1 < alphabet.length) {
+						lastAttempt = lastAttempt.substring(0, i) + alphabet[alphabet.indexOf(lastAttempt[i]) + 1] + lastAttempt.substring(i + 1);
+						break;
+					}
+					// Current position character down to beginning of alphabet
+					else if(i > 0) {
+						lastAttempt = lastAttempt.substring(0, i) + alphabet[0] + lastAttempt.substring(i + 1);
+					}
+					// Add position + Current position character down to beginning of alphabet
+					else {
+						lastAttempt = alphabet[0] + lastAttempt.substring(0, i) + alphabet[0] + lastAttempt.substring(i + 1);
+					}
+				}
+			}
+			return lastAttempt;
+		}
+
+		async function sendAttempts(difficulty, lastAttempt='') {
+			while(true) {
+				lastAttemptMemory = lastAttempt;
+				attemptCountMemory++;
+
+				const formData = new FormData();
+				formData.append("difficulty", difficulty);
+				formData.append("password", lastAttempt);
+
+				const response = await fetch("http://localhost/server.php", {
+					body: formData,
+					method: "post"
+				});
+				const responseText = await response.text();
+
+				if(response.status >= 200 && response.status < 300) {
+					if(responseText == "OK") {
+						document.getElementById("successAttempt").innerHTML = lastAttempt;
+						showStats();
+						clearInterval(timeInterval);
+						document.getElementById("difficulty").readOnly = false;
+						document.getElementById("crackButton").disabled = false;
+						break;
+					}
+					else {
+						lastAttempt = nextAttempt(lastAttempt);
+					}
+				}
+				else {
+					document.getElementById("status").innerHTML = response.status + " " + response.statusText;
+					document.getElementById("status").classList.add("error");
+					showStats();
+					clearInterval(timeInterval);
+					document.getElementById("difficulty").readOnly = false;
+					document.getElementById("crackButton").disabled = false;
+					break;
+				}
+			}
+		}
+
+		function crack() {
+			document.getElementById("difficulty").readOnly = true;
+			document.getElementById("crackButton").disabled = true;
+			
+			document.getElementById("status").innerHTML = "200 OK";
+			document.getElementById("status").classList.remove("error");
+			document.getElementById("attemptCount").innerHTML = "0";
+			document.getElementById("successAttempt").innerHTML = "";
+			lastAttemptMemory = "";
+			attemptCountMemory = 0;
+			startTimestamp = Date.now();
+			showStats();
+			clearInterval(timeInterval);
+			timeInterval = setInterval(() => {
+				showStats();
+			}, 1000);
+
+			sendAttempts(document.getElementById("difficulty").value);
+		}
+		</script>
+	</head>
+	<body>
+		<form class="form" action="server.php" method="post">
+			<table cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<td colspan="2">
+							<div><label for="difficulty">Difficulty:</label></div>
+							<div><input id="difficulty" name="difficulty" type="number" min="0" max="4" value="0" onchange="difficultyChange(this);"></div>
+							<hr>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Form</th>
+						<th>Cracking</th>
+					</tr>
+					<tr>
+						<td>
+							<div><label for="password">Password:</label></div>
+							<div><input id="password" name="password" type="password"></div>
+						</td>
+						<td>
+							<div>Alphabet: <b id="alphabet">0-9</b></div>
+							<div>Server status: <b id="status"></b></div>
+							<div>Total time: <b id="time">0:00</b></div>
+							<div>Attempt count: <b id="attemptCount">0</b></div>
+							<div>Last attempt: <b id="lastAttempt"></b></div>
+							<div>Cracked password: <b id="successAttempt"></b></div>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>
+							<input type="submit" value="Send">
+						</td>
+						<td>
+							<button id="crackButton" type="button" onclick="crack();">Crack</button>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</body>
+</html>

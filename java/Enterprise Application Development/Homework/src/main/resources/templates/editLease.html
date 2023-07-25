@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${pageTitle}">Vehicle Leasing Database</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon.png"/>
+		<link rel="stylesheet" href="../../stylesheet.css"/>
+	</head>
+	<body>
+		<a id="back" title="Back" onclick="history.back()"></a>
+		<a id="account" th:if="${accountId != null}" th:href="@{/api/accounts/{id}(id=${accountId})}" title="Account"></a>
+		<a id="signOut" th:if="${accountId != null}" href="/sign-out" title="Sign out"></a>
+		<h1 th:text="${pageTitle}">Vehicle Leasing Database</h1>
+		<div class="content padding">
+			<form th:action="@{/edit/lease}" method="post" th:object="${lease}">
+				<input type="hidden" th:field="*{id}" required>
+				<div><b>Start Date:</b><input id="startDate" type="date" th:max="*{endDate}" th:field="*{startDate}" required autofocus onchange="document.getElementById('endDate').min = this.value;"></div>
+				<div><b>End Date:</b><input id="endDate" type="date" th:min="*{startDate}" th:field="*{endDate}" required onchange="document.getElementById('startDate').max = this.value;"></div>
+				<div><b>Insurance:</b><input type="checkbox" th:field="*{insurance}"></div>
+				<div><b>Vehicle:</b><select th:field="*{vehicle.id}" required>
+					<option th:each="vehicle : ${vehicles}" th:value="${vehicle.id}" th:text="${vehicle}"></option>
+				</select></div>
+				<div><b>Customer:</b><select th:field="*{customer.id}" required>
+					<option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer}"></option>
+				</select></div>
+				<div><input type="submit" th:value="${formButtonValue}"></div>
+			</form>
+		</div>
+	</body>
+</html>

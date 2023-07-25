@@ -1,0 +1,193 @@
+body {
+	font: 14px system-ui;
+	margin: 0;
+}
+
+* {
+	font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6,
+th, td,
+.button, button, input, select,
+.padding {
+	padding: 0.75em 1rem;
+	margin: 0;
+}
+
+h1 {
+	font-size: 1.64rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.32rem;
+	background: #EEE;
+}
+
+h3 {
+	font-size: 1.16rem;
+	background: #EEE;
+}
+
+thead,
+table tfoot tr:not(:first-of-type) {
+	background: #EEE;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table:first-of-type .content-title h3,
+table thead tr:not(:first-of-type) th {
+	padding-top: 0;
+}
+
+table:not(:first-of-type) thead tr:first-of-type th {
+	border-top: 1px solid #BBB;
+}
+
+table thead tr:not(:first-of-type):last-of-type th,
+table:not(:first-of-type) tbody tr:last-of-type td,
+table tfoot tr:not(:last-of-type):first-of-type td {
+	border-bottom: 1px solid #BBB;
+}
+
+table tbody tr:nth-child(even) {
+	background: #F8F8F8;
+}
+
+table tbody tr:hover {
+	background: #EEE;
+}
+
+.button, button, input, select,
+.content {
+	border: 1px solid #BBB;
+	border-radius: 0.5rem;
+	vertical-align: middle;
+}
+
+.button, button, input[type="submit"] {
+	cursor: pointer;
+	color: inherit;
+	background: #DDD;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+	background: #CCC;
+}
+
+input[type="checkbox"] {
+	position: relative;
+	appearance: none;
+	visibility: hidden;
+	border: 0;
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0;
+}
+
+input[type="checkbox"]:after {
+	content: "\2714";
+	position: absolute;
+	visibility: visible;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #FFF;
+	font-weight: bold;
+	background: #FFF;
+	border: 1px solid #BBB;
+	border-radius: 0.5rem;
+	text-align: center;
+}
+
+input[type="checkbox"]:checked:after {
+	background: #888;
+	border-color: #888;
+}
+
+input:not([type="submit"]), select {
+	margin-left: 1rem;
+}
+
+#logo, #back, #account, #signOut {
+	cursor: pointer;
+	position: absolute;
+	top: 1.2rem;
+	background-size: contain;
+	height: 2.175rem;
+	aspect-ratio: 1;
+}
+
+#logo, #back {
+	left: 1rem;
+}
+
+#logo {
+	background-image: url(favicon.png);
+}
+
+#back {
+	background-image: url(back.png);
+}
+
+#account {
+	right: 4.175rem;
+	background-image: url(account.png);
+}
+
+#signOut {
+	right: 1rem;
+	background-image: url(sign-out.png);
+}
+
+.content {
+	background: #F8F8F8;
+	margin: 0.75em auto;
+	display: table;
+	overflow: hidden;
+}
+
+.content div {
+	padding-block: 0.75em;
+}
+
+.content-title {
+	padding: 0;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #CCC;
+	margin-block: 0.75em;
+}
+
+.rowButtons {
+	padding: 0.5em 0.5rem;
+}
+
+.rowButtons > a {
+	display: inline-block;
+}
+
+.rowButtons > a {
+	margin: 0.25em 0.5rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.inline-block {
+	margin-top: 0.75em;
+	display: table;
+}

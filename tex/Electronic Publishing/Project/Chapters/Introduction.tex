@@ -1,0 +1,42 @@
+\chapter{Úvod}
+\label{chap:1}
+Motivací práce bylo vytvořit moderní responzivní webovou aplikaci pro sdílení virtuální tabule, která bude umožňovat spolupráci více uživatelů na různých typech zařízení.
+Virtuální tabule slouží k zaznamenávání a sdílení návrhů a ilustrací pomocí jednoduchých nástrojů, díky kterým je možné ji využít v práci, škole či v osobním životě.
+%je oblast využití tohoto řešení skutečně široká.
+Samotný obsah tabule je průběžně synchronizován, takže jsou změny jednotlivých uživatelů vidět přímo bez nutnosti stránku aktualizovat.
+Zároveň jsou také veškeré úpravy ukládány do databáze, která slouží jako trvalé uložiště dat a také záloha při případném výpadku serveru či spojení.
+%Databáze je poté využita pro načítání obsahu při připojení uživatele a také jako záloha při případném výpadku serveru či spojení.
+
+%Myšleno je také na případné problémy, které se mohou vyskytnout nejen na straně uživatele, ale také na straně serveru.
+%Samotný obsah tabule je průběžně synchronizován a ukládán, takže při výpadku sítě či serveru je po obnovení spojení vždy načten poslední uložený stav.
+%, tak aby při , každopádně toto řešení nabízí také export pomocí obrázku či zdrojového souboru, kdykoli možné 
+První kapitola se věnuje výběru jednotlivých stávajících řešení nástrojů pro sdílení virtuální tabule.
+Kapitola uvádí nástroje a technologie vybraných webů a porovnává je s vypracovaným řešením.
+
+Druhá kapitola se zaměřuje na rozbor požadavků, analýzu problémů a možných řešení a také na architekturu systému.
+Kapitola přibližuje vnitřní strukturu systému na kterém je celé řešení postaveno.
+
+Třetí kapitola pak pojednává o implementaci samotného řešení a jeho jednotlivých součástí.
+Nejprve je zmíněno vykreslování, jeho optimalizace pomocí vláken a také zpracování barev v rámci barevných motivů.
+Dále se kapitola věnuje výměně dat mezi klientských zařízením a serverem pomocí WebSockets.
+Následně je popsána správa dat, která na lokální či serverové úrovni zajišťuje využití dat pro konkrétní potřeby uživatele.
+Zmíněno je mimo jiné využití MySQL databáze, LocalStorage a Fetch API a také jednotlivé možnosti exportování tabule do rastrové či nativní podoby.
+V poslední řadě se kapitola věnuje uživatelskému rozhraní z pohledu responzivity, podpory více jazyků včetně jejich zakomponování do sdílení tabule a také jednotlivým stránkám a jejich podobě ve finálním řešení.
+%, ať už lokální či serverová zahrnuje využití MySQL databáze, LocalStorage či Fetch API a je pak dále včetně exportu tabule detailně popsána.
+%S daty se lokálně i na serveru dále pracuje a tento proces je pak dále popsán včetně využití MySQL databáze, LocalStorage či Fetch API.  jsou následně ukládána do MySQL databáze či LocalStorage, což je také podrobně popsáno.
+%Serverová i lokální správa dat je pak dále popsána včetně využití MySQL databáze a LocalStorage.
+%začátek vývoje řešení, kdy 
+%pojednává o využití Canvas API, coby plnohodnotné technologie pro vykreslování grafického výstupu na webu.
+%Kapitola obsahuje popis této technologie včetně ukázky několika příkladů základních funkcí.
+
+%Třetí kapitola se zaměřuje na výměnu dat mezi klientským zařízením a serverem pomocí protokolu WebSocket.
+%Tento protokol poskytuje snadný a spolehlivý přenos dat, což umožňuje interaktivní spolupráci více uživatelů.
+
+%Čtvrtá kapitola se věnuje správě dat a popisuje dva základní způsoby jak lze data ukládat či načítat pro další využití.
+%Popsáno je využití MySQL databáze, kde data zůstávají uloženy dlouhodobě mezi jednotlivými návštěvami webu a dále pak exportování a nahrání dat v nativní podobě ve formátu JSON.
+
+%Pátá kapitola rozšiřuje předchozí kapitoly o pohled na optimalizaci jednotlivých příkazů a dat, což umožňuje plynulejší chod webové aplikace.
+%Zmiňuje se mimo jiné o Web workers použitých k rozdělení instrukcí do více vláken či o různých změnách v datech pro konkrétní místa použití.
+
+%Poslední kapitola se zaměřuje na nedokončené části bakalářské práce a jejich možné rozšíření či vylepšení.
+\endinput

@@ -1,0 +1,276 @@
+:focus,:active{
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+body{
+	color: #FFF;
+	background: #000;
+	height: 100vh;
+	margin: 0;
+}
+#game{
+	user-select: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	color: #FFF;
+	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+	background: #000;
+	outline: 1px solid rgba(128,128,128,0.5);
+	box-shadow: 0 0 128px 0 rgba(128,128,128,0.5);
+	display: grid;
+	grid-template-columns: 25% 50% 25%;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+}
+#gameLeft,#gameCenter,#gameRight{
+	position: relative;
+	display: grid;
+}
+#gameLeft,#gameRight{
+	grid-template-rows: 1fr auto;
+}
+#gameCenter{
+	font-size: 18px;
+}
+#gameLeft > *,#gameCenter > *,#gameRight > *{
+	display: inline-grid;
+	align-content: start;
+	justify-content: stretch;
+}
+#gameLeft > *:nth-child(1),#gameRight > *:nth-child(1){
+	padding: 3px 3px 0;
+}
+#gameLeft > *:nth-child(2),#gameRight > *:nth-child(2){
+	padding: 0 3px 3px;
+}
+#gameLeft > * > *,#gameRight > * > *{
+	line-height: 36px;
+	margin: 3px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#gameLeft > * > * > *,#gameRight > * > * > *{
+	border-radius: 12px;
+}
+#gameLeft > * > * > *:nth-child(1),#gameRight > * > * > *:nth-child(1){
+	line-height: 24px;
+}
+#gameLeft > * > * > *:nth-child(2),#gameRight > * > * > *:nth-child(2){
+	background: #333;
+	font-family: 'Consolas';
+	text-align: center;
+}
+#gameCenterCanvas{
+	background: #000 url(src/img/playfield.svg) repeat 0 0;
+	width: 100%;
+	height: 100%;
+}
+#gameCenterInfo{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: rgba(255,255,255,0);
+	background: rgba(0,0,0,0.75);
+	white-space: nowrap;
+	align-content: center;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.25s opacity;
+}
+#gameCenterInfo.visible{
+	color: #FFF;
+	opacity: 1;
+}
+#gameCenterInfo.temporary{
+	animation: gameCenterInfo_temporary 1s linear infinite forwards;
+}
+#gameCenterArea{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#gameRightTopNextContent{
+	line-height: 24px;
+	padding: 6px;
+}
+#gameRightTopNextContentImage{
+	width: 100%;
+	height: 24px;
+	vertical-align: middle;
+	object-fit: contain;
+}
+#gameRightTopNextContentImage.I{
+	height: 12px;
+}
+#gameOverlay, #gameOverlay > *{
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#gameOverlay > *{
+	top: 100%;
+	background: #000;
+	text-align: center;
+	opacity: 0;
+	transition: 0.5s;
+	overflow: hidden;
+}
+#gameOverlay > *.visible{
+	pointer-events: auto;
+	top: 0;
+	opacity: 1;
+}
+#gameOverlay h1,#gameOverlay h2,#gameOverlay h3{
+	margin: 0;
+}
+#gameOverlay h1{
+	font-size: 32px;
+	line-height: 80px;
+}
+#gameOverlay h2{
+	font-size: 24px;
+	line-height: 48px;
+}
+#gameOverlay h3{
+	color: #CCC;
+	font-size: 18px;
+	line-height: 48px;
+}
+#gameOverlayMenu{
+	display: grid;
+	align-content: space-evenly;
+	justify-items: center;
+}
+#gameOverlayMenu > *{
+	width: 50%;
+	display: inline-grid;
+}
+#gameOverlayMenuLogo{
+	position: relative;
+	animation: gameOverlayMenuLogo_float 0.5s linear infinite alternate;
+}
+#gameOverlayHighscores{
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+#gameOverlayHighscoresContent{
+	font-family: 'Consolas';
+	display: grid;
+	grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+	grid-template-columns: auto auto auto;
+	text-align: left;
+	overflow: auto;
+}
+.gameOverlayHighscoresContentBlock{
+	color: #CCC;
+	line-height: 40px;
+	padding: 0 12px;
+	white-space: nowrap;
+}
+.gameOverlayHighscoresContentBlock:nth-child(-n+3){
+	position: sticky;
+	top: 0;
+	color: #FFF;
+	background: #000;
+	border-bottom: 1px solid #CCC;
+	text-transform: uppercase;
+}
+.gameOverlayHighscoresContentBlock:nth-child(3n+1){
+	text-align: center;
+}
+.gameOverlayHighscoresContentBlock:nth-child(6n+7),
+.gameOverlayHighscoresContentBlock:nth-child(6n+8),
+.gameOverlayHighscoresContentBlock:nth-child(6n+9){
+	background: #111;
+}
+.gameOverlayHighscoresContentBlock.last{
+	color: #000;
+	background: #FFF;
+}
+
+/* Classes */
+.gameOverlayCloseButton,.gameOverlayCloseButton:hover{
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #FFF;
+	font-size: inherit;
+	background: transparent;
+	width: 72px;
+	line-height: inherit;
+	box-shadow: none;
+}
+.gameOverlaySelect{
+	line-height: 64px;
+}
+.gameOverlaySelect > .gameOverlaySelectButton:first-of-type{
+	border-radius: 12px 0 0 12px;
+}
+.gameOverlaySelect > .gameOverlaySelectButton{
+	border-radius: 0;
+}
+.gameOverlaySelect > .gameOverlaySelectButton:last-of-type{
+	border-radius: 0 12px 12px 0;
+}
+
+/* Form elements */
+button{
+	cursor: pointer;
+	color: #333;
+	font-size: 14px;
+	font-family: inherit;
+	background: #CCC;
+	border: 0;
+	border-radius: 12px;
+	line-height: 36px;
+	padding: 0 12px;
+	text-transform: uppercase;
+	transition: 0.25s;
+}
+button:hover,
+button.selected{
+	color: #000;
+	background: #FFF;
+	box-shadow: 0 0 36px 0 rgba(255,255,255,0.5);
+}
+button.rounded{
+	border-radius: 18px;
+}
+
+/* Animations */
+@keyframes gameCenterInfo_temporary{
+	0%{
+		font-size: 1em;
+		color: rgba(255,255,255,0);
+	}
+	25%{
+		font-size: 2em;
+		color: rgba(255,255,255,1);
+	}
+	75%{
+		font-size: 2.5em;
+		color: rgba(255,255,255,1);
+	}
+	100%{
+		font-size: 3.5em;
+		color: rgba(255,255,255,0);
+	}
+}
+@keyframes gameOverlayMenuLogo_float{
+	0%{
+		bottom: 0;
+		transform: scale(1);
+	}
+	100%{
+		bottom: 16px;
+		transform: scale(1.1);
+	}
+}

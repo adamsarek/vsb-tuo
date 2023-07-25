@@ -1,0 +1,21 @@
+﻿using Prison.Forms;
+using System;
+using System.Management.Instrumentation;
+using System.Windows.Forms;
+
+namespace Prison
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormCellMenu());
+        }
+    }
+}

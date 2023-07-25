@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${pageTitle}">Vehicle Leasing Database</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon.png"/>
+		<link rel="stylesheet" href="../stylesheet.css"/>
+	</head>
+	<body>
+		<a id="logo" href="/" th:title="${pageTitle}" title="Vehicle Leasing Database"></a>
+		<a id="account" th:if="${accountId != null}" th:href="@{/api/accounts/{id}(id=${accountId})}" title="Account"></a>
+		<a id="signOut" th:if="${accountId != null}" href="/sign-out" title="Sign out"></a>
+		<h1 th:text="${pageTitle}">Vehicle Leasing Database</h1>
+		<div class="content padding">
+			<form th:action="@{/sign-in/account}" method="post" th:object="${account}">
+				<input type="hidden" th:field="*{id}" required>
+				<div><b>Email:</b><input type="email" size="32" minlength="6" maxlength="320" th:field="*{emailAddress}" required autofocus></div>
+				<div><b>Password:</b><input type="password" size="32" minlength="8" maxlength="32" th:field="*{password}" required></div>
+				<div><input type="submit" th:value="${formButtonValue}"></div>
+				<hr>
+				<div><b>Don't have an account yet?</b><a class="button inline-block" th:href="@{/sign-up}">Sign up instead</a></div>
+			</form>
+		</div>
+	</body>
+</html>

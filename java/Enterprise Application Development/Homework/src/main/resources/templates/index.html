@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${pageTitle}">Vehicle Leasing Database</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon.png"/>
+		<link rel="stylesheet" href="stylesheet.css"/>
+	</head>
+	<body>
+		<a id="logo" href="/" th:title="${pageTitle}" title="Vehicle Leasing Database"></a>
+		<a id="account" th:if="${accountId != null}" th:href="@{/api/accounts/{id}(id=${accountId})}" title="Account"></a>
+		<a id="signOut" th:if="${accountId != null}" href="/sign-out" title="Sign out"></a>
+		<h1 th:text="${pageTitle}">Vehicle Leasing Database</h1>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th class="content-title" colspan="2">
+							<h2><a href="/api/accounts">Accounts (<span th:text="${accounts.size()}">0</span>)</a></h2>
+						</th>
+					</tr>
+					<tr>
+						<th align="left">ID</th>
+						<th align="left">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="account : ${accounts}">
+						<td align="left"><a th:href="@{/api/accounts/{id}(id=${account.id})}" th:text="${account.id}"></a></td>
+						<td align="left" th:text="${account.emailAddress}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th class="content-title" colspan="7">
+							<h2><a href="/api/vehicles">Vehicles (<span th:text="${vehicles.size()}">0</span>)</a></h2>
+						</th>
+					</tr>
+					<tr>
+						<th class="content-title" colspan="7">
+							<h3><a href="/api/cars">Cars (<span th:text="${cars.size()}">0</span>)</a></h3>
+						</th>
+					</tr>
+					<tr>
+						<th align="left">ID</th>
+						<th align="left">Brand</th>
+						<th align="left">Model</th>
+						<th align="left">Model Year</th>
+						<th align="right">Weight (kg)</th>
+						<th align="center">Trunk</th>
+						<th align="center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="car : ${cars}">
+						<td align="left"><a th:href="@{/api/cars/{id}(id=${car.id})}" th:text="${car.id}"></a></td>
+						<td align="left" th:text="${car.brand}"></td>
+						<td align="left" th:text="${car.model}"></td>
+						<td align="left" th:text="${car.modelYear}"></td>
+						<td align="right" th:text="${car.weight}"></td>
+						<td align="center" th:text="${car.trunk}"></td>
+						<td class="rowButtons" align="right"><a class="button" th:href="@{/edit/car/{id}(id=${car.id})}">Edit</a><a class="button" th:href="@{/remove/vehicle/{id}(id=${car.id})}">Remove</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="7"><a class="button" th:href="@{/add/car}">Add car</a></td>
+					</tr>
+				</tfoot>
+			</table>
+			<table>
+				<thead>
+					<tr>
+						<th class="content-title" colspan="7">
+							<h3><a href="/api/trucks">Trucks (<span th:text="${trucks.size()}">0</span>)</a></h3>
+						</th>
+					</tr>
+					<tr>
+						<th align="left">ID</th>
+						<th align="left">Brand</th>
+						<th align="left">Model</th>
+						<th align="left">Model Year</th>
+						<th align="right">Weight (kg)</th>
+						<th align="center">Trailer Count</th>
+						<th align="center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="truck : ${trucks}">
+						<td align="left"><a th:href="@{/api/trucks/{id}(id=${truck.id})}" th:text="${truck.id}"></a></td>
+						<td align="left" th:text="${truck.brand}"></td>
+						<td align="left" th:text="${truck.model}"></td>
+						<td align="left" th:text="${truck.modelYear}"></td>
+						<td align="right" th:text="${truck.weight}"></td>
+						<td align="center" th:text="${truck.trailerCount}"></td>
+						<td class="rowButtons" align="right"><a class="button" th:href="@{/edit/truck/{id}(id=${truck.id})}">Edit</a><a class="button" th:href="@{/remove/vehicle/{id}(id=${truck.id})}">Remove</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="7"><a class="button" th:href="@{/add/truck}">Add truck</a></td>
+					</tr>
+					<tr>
+						<td colspan="7"><a class="button" th:href="@{/add/vehicle}">Add vehicle</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th class="content-title" colspan="6">
+							<h2><a href="/api/customers">Customers (<span th:text="${customers.size()}">0</span>)</a></h2>
+						</th>
+					</tr>
+					<tr>
+						<th align="left">ID</th>
+						<th align="left">Full Name</th>
+						<th align="left">Age</th>
+						<th align="left">Email</th>
+						<th align="left">Phone</th>
+						<th align="center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="customer : ${customers}">
+						<td align="left"><a th:href="@{/api/customers/{id}(id=${customer.id})}" th:text="${customer.id}"></a></td>
+						<td align="left" th:text="${customer.fullName}"></td>
+						<td align="left" th:text="${customer.age}"></td>
+						<td align="left" th:text="${customer.emailAddress}"></td>
+						<td align="left" th:text="${customer.phoneNumber}"></td>
+						<td class="rowButtons" align="right"><a class="button" th:href="@{/edit/customer/{id}(id=${customer.id})}">Edit</a><a class="button" th:href="@{/remove/customer/{id}(id=${customer.id})}">Remove</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="6"><a class="button" th:href="@{/add/customer}">Add customer</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th class="content-title" colspan="7">
+							<h2><a href="/api/leases">Leases (<span th:text="${leases.size()}">0</span>)</a></h2>
+						</th>
+					</tr>
+					<tr>
+						<th align="left">ID</th>
+						<th align="left">Start Date</th>
+						<th align="left">End Date</th>
+						<th align="left">Insurance</th>
+						<th align="left">Vehicle</th>
+						<th align="left">Customer</th>
+						<th align="center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="lease : ${leases}">
+						<td align="left"><a th:href="@{/api/leases/{id}(id=${lease.id})}" th:text="${lease.id}"></a></td>
+						<td align="left" th:text="${lease.startDate}"></td>
+						<td align="left" th:text="${lease.endDate}"></td>
+						<td align="left" th:text="${lease.insurance}"></td>
+						<td align="left" th:text="${lease.vehicle}"></td>
+						<td align="left" th:text="${lease.customer}"></td>
+						<td class="rowButtons" align="right"><a class="button" th:href="@{/edit/lease/{id}(id=${lease.id})}">Edit</a><a class="button" th:href="@{/remove/lease/{id}(id=${lease.id})}">Remove</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="7"><a class="button" th:href="@{/add/lease}">Add lease</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Contact - Instabook</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="src/css/main.css">
+		<script src="src/js/main.js" defer></script>
+	</head>
+	<body>
+		<img class="o-background" src="src/img/background.jpg">
+		<div class="o-page">
+			<!-- Header -->
+			<header id="header" class="o-header u-grid">
+				<img class="o-header__logo u-grid-item" src="src/img/logo_dark.png" alt="Dark Logo">
+				<button class="o-header__nav-button"><img src="src/img/nav.png" alt="Navigation"></button>
+				<nav class="o-header__nav u-grid-item">
+					<ul class="c-list u-grid">
+						<li class="c-list-item u-grid-item"><a href="index.html">Home</a></li>
+						<li class="c-list-expander c-list-item u-grid-item">
+							<a href="#">Forum</a>
+							<ul class="c-list u-grid">
+								<li class="c-list-item u-grid-item"><a href="#">News</a></li>
+								<li class="c-list-item u-grid-item"><a href="#">Updates</a></li>
+								<li class="c-list-item u-grid-item"><a href="#">Events</a></li>
+								<li class="c-list-item u-grid-item"><a href="#">FAQ</a></li>
+							</ul>
+						</li>
+						<li class="c-list-item u-grid-item"><a href="blog.html">Blog</a></li>
+						<li class="c-list-item u-grid-item"><a class="active" href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<!-- Countdown -->
+			<section id="countdown" class="o-countdown u-grid">
+				<div class="o-countdown__message u-grid-item"></div>
+				<div class="o-countdown__time u-grid-item"></div>
+			</section>
+			
+			<!-- Map -->
+			<iframe id="map" class="o-map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=18.151431083679203%2C49.827712712204885%2C18.16597938537598%2C49.838840472872604&amp;layer=mapnik"></iframe>
+			
+			<!-- Contact -->
+			<div class="o-contact u-grid">
+				<section id="contact-form" class="o-contact-form u-grid">
+					<h1 class="u-grid-item">Contact us</h1>
+					<h2 class="u-grid-item">We will respond to your message within 24 hours. Please do not forget to write your real name and email in order to receive our response. If we figure out that your message is inappropriate or you are sending too many requests, we would have to ban you! Anyway, let's keep in touch.</h2>
+					<form class="u-grid-item">
+						<label class="c-label" for="contact-form__name">Name</label>
+						<input class="c-input" name="contact-form__name" type="text" minlength="1" maxlength="50" required>
+						<label class="c-label" for="contact-form__email">Email</label>
+						<input class="c-input" name="contact-form__email" type="email" minlength="6" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+						<label class="c-label" for="contact-form__message">Message</label>
+						<textarea class="c-input" name="contact-form__message" rows="10" minlength="1" maxlength="1000" required></textarea>
+						<input class="c-button" type="submit" value="Submit message">
+					</form>
+				</section>
+				<section id="contact-info" class="o-contact-info u-grid">
+					<h1 class="u-grid-item">Contact info</h1>
+					<h2 class="u-grid-item">Instabook<br>17. listopadu 2172/15<br>708 00 Ostrava-Poruba</h2>
+					<h2 class="u-grid-item">Email: contact@instabook.edu<br>Phone: +420 360 420 690<br>Fax: +420 123 456 789</h2>
+				</section>
+				<section id="contact-socials" class="o-contact-socials u-grid">
+					<h1 class="u-grid-item">Social links</h1>
+					<ul class="c-list u-grid">
+						<li class="c-list-item u-grid-item"><img src="src/img/twitter.png" alt="Twitter"></li>
+						<li class="c-list-item u-grid-item"><img src="src/img/facebook.png" alt="Facebook"></li>
+						<li class="c-list-item u-grid-item"><img src="src/img/linkedin.png" alt="LinkedIn"></li>
+						<li class="c-list-item u-grid-item"><img src="src/img/pinterest.png" alt="Pinterest"></li>
+						<li class="c-list-item u-grid-item"><img src="src/img/vimeo.png" alt="Vimeo"></li>
+					</ul>
+				</section>
+			</div>
+			
+			<!-- Footer -->
+			<footer id="footer" class="o-footer">
+				<div class="o-footer__top u-grid">
+					<div class="u-grid">
+						<img class="o-footer__logo u-grid-item" src="src/img/logo_light.png" alt="Light Logo">
+						<div class="u-grid-item">Instabook was founded in 2020 by COVID-19 which is holding majority share of this fake company. By the way, we do not sell a single book, but none reads this, so this message is just placeholder.</div>
+					</div>
+					<div class="u-grid">
+						<h3 class="u-grid-item">Latest Tweets</h3>
+						<div class="o-footer__posts u-grid">
+							<div class="o-footer__post u-grid-item">
+								<div class="o-footer__post-body">We love instagram and facebook.<br>No reptilian tried to kill us during this tweet.<br>PS: HELP!</div>
+							</div>
+							<div class="o-footer__post u-grid-item">
+								<div class="o-footer__post-body">Yaay! We just got 1 active user.<br>Can we bring more people to this platform? Share this till they delete it!</div>
+							</div>
+						</div>
+					</div>
+					<div class="u-grid">
+						<h3 class="u-grid-item">Recent Posts</h3>
+						<div class="o-footer__posts u-grid">
+							<div class="o-footer__post u-grid-item">
+								<div class="o-footer__post-title">Publishers are joining the platform</div>
+								<div class="o-footer__post-body">We gained 1 publisher which is 100% increase since last time we have updated you.</div>
+							</div>
+							<div class="o-footer__post u-grid-item">
+								<div class="o-footer__post-title">Finally we can get your money</div>
+								<div class="o-footer__post-body">We are so glad to announce that we just started accepting PayBro payments.</div>
+							</div>
+						</div>
+					</div>
+					<div class="u-grid">
+						<h3 class="u-grid-item">Photo Stream</h3>
+						<ul class="o-footer__photos c-list u-grid">
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_1.jpg" alt="Photo 1"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_2.jpg" alt="Photo 2"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_3.jpg" alt="Photo 3"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_4.jpg" alt="Photo 4"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_5.jpg" alt="Photo 5"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_6.jpg" alt="Photo 6"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_7.jpg" alt="Photo 7"></li>
+							<li class="c-list-item u-grid-item"><img class="o-footer__photo" src="src/img/ps_8.jpg" alt="Photo 8"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="o-footer__bottom u-grid">
+					<ul class="o-footer__copyright c-list u-grid">
+						<li class="c-list-item u-grid-item">Student project &copy; 2020 Adam Šárek (SAR0083)</li>
+						<li class="c-list-item u-grid-item"><a href="resources.txt">Resources</a></li>
+						<li class="c-list-item u-grid-item"><a href="#">Legal Notice</a></li>
+						<li class="c-list-item u-grid-item"><a href="#">Terms & Conditions</a></li>
+					</ul>
+					<ul class="o-footer__socials c-list u-grid">
+						<li class="c-list-item u-grid-item"><a href="#"><img src="src/img/twitter.png" alt="Twitter"></a></li>
+						<li class="c-list-item u-grid-item"><a href="#"><img src="src/img/facebook.png" alt="Facebook"></a></li>
+						<li class="c-list-item u-grid-item"><a href="#"><img src="src/img/linkedin.png" alt="LinkedIn"></a></li>
+						<li class="c-list-item u-grid-item"><a href="#"><img src="src/img/pinterest.png" alt="Pinterest"></a></li>
+						<li class="c-list-item u-grid-item"><a href="#"><img src="src/img/vimeo.png" alt="Vimeo"></a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

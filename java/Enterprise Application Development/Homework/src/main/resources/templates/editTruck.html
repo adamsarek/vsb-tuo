@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${pageTitle}">Vehicle Leasing Database</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon.png"/>
+		<link rel="stylesheet" href="../../stylesheet.css"/>
+	</head>
+	<body>
+		<a id="back" title="Back" onclick="history.back()"></a>
+		<a id="account" th:if="${accountId != null}" th:href="@{/api/accounts/{id}(id=${accountId})}" title="Account"></a>
+		<a id="signOut" th:if="${accountId != null}" href="/sign-out" title="Sign out"></a>
+		<h1 th:text="${pageTitle}">Vehicle Leasing Database</h1>
+		<div class="content padding">
+			<form th:action="@{/edit/truck}" method="post" th:object="${truck}">
+				<input type="hidden" th:field="*{id}" required>
+				<div><b>Brand:</b><input type="text" size="32" minlength="1" maxlength="32" th:field="*{brand}" required autofocus></div>
+				<div><b>Model:</b><input type="text" size="32" minlength="1" maxlength="32" th:field="*{model}" required></div>
+				<div><b>Model Year:</b><input type="number" size="4" min="1886" th:field="*{modelYear}" required></div>
+				<div><b>Weight (kg):</b><input type="number" size="6" min="0" step="any" th:field="*{weight}" required></div>
+				<input type="hidden" th:field="*{vehicleType}" required>
+				<div><b>Trailer Count:</b><select th:field="*{trailerCount}" required>
+					<option th:value="0">0</option>
+					<option th:value="1">1</option>
+					<option th:value="2">2</option>
+					<option th:value="3">3</option>
+					<option th:value="4">4</option>
+				</select></div>
+				<div><input type="submit" th:value="${formButtonValue}"></div>
+			</form>
+		</div>
+	</body>
+</html>

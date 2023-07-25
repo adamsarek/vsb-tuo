@@ -1,0 +1,52 @@
+# Images
+
+logo_dark.png  (SAR0083)
+logo_light.png (SAR0083)
+
+access.png     (https://material.io/resources, Apache license 2.0)
+collection.png (https://material.io/resources, Apache license 2.0)
+free.png       (https://material.io/resources, Apache license 2.0)
+
+category.png (https://www.flaticon.com/packs/ui-interface-22, Icons made by Freepik, Flaticon License)
+comments.png (https://www.flaticon.com/packs/ui-interface-22, Icons made by Freepik, Flaticon License)
+nav.png      (https://www.flaticon.com/packs/ui-interface-22, Icons made by Freepik, Flaticon License)
+time.png     (https://www.flaticon.com/packs/ui-interface-22, Icons made by Freepik, Flaticon License)
+user.png     (https://www.flaticon.com/packs/ui-interface-22, Icons made by Freepik, Flaticon License)
+
+facebook.png  (https://www.flaticon.com/packs/social-media-6, Icons made by Freepik, Flaticon License)
+linkedin.png  (https://www.flaticon.com/packs/social-media-6, Icons made by Freepik, Flaticon License)
+pinterest.png (https://www.flaticon.com/packs/social-media-6, Icons made by Freepik, Flaticon License)
+twitter.png   (https://www.flaticon.com/packs/social-media-6, Icons made by Freepik, Flaticon License)
+vimeo.png     (https://www.flaticon.com/packs/social-media-6, Icons made by Freepik, Flaticon License)
+
+background.png (https://pixabay.com/cs/illustrations/praha-knihovna-praha-kl%C3%A1%C5%A1tera-knihy-980732, Pixabay License)
+banner.png     (https://pixabay.com/cs/illustrations/knihy-pap%C3%ADr-kniha-str%C3%A1nky-knihy-718583, Pixabay License)
+
+article_1.png (https://pixabay.com/cs/photos/photoshop-kniha-fantazie-tajemn%C3%BD-4778071, Pixabay License)
+article_2.png (https://pixabay.com/cs/photos/mezin%C3%A1rodn%C3%AD-vlajka-kazachst%C3%A1n-2693236, Pixabay License)
+article_3.png (https://pixabay.com/cs/photos/cyberpunk-neon-noc-m%C4%9Bstsk%C3%A9-ulice-5135622, Pixabay License)
+article_4.png (https://pixabay.com/cs/illustrations/smartphone-mobiln%C3%AD-telefon-%C4%8Dlov%C4%9Bk-5692537, Pixabay License)
+
+mg_1.png (https://pixabay.com/cs/photos/bible-str%C3%A1nka-knihy-p%C3%ADsmo-textura-1960635, Pixabay License)
+mg_2.png (https://pixabay.com/cs/illustrations/kniha-star%C3%BD-mraky-strom-pt%C3%A1k%C5%AF-863418, Pixabay License)
+mg_3.png (https://pixabay.com/cs/photos/star%C3%A9-knihy-kniha-star%C3%A9-knihovna-436498, Pixabay License)
+mg_4.png (https://pixabay.com/cs/photos/kniha-rose-z%C3%A1lo%C5%BEka-do-knihy-419589, Pixabay License)
+
+ps_1.png (https://pixabay.com/cs/photos/znalosti-kniha-knihovna-br%C3%BDle-1052010, Pixabay License)
+ps_2.png (https://pixabay.com/cs/photos/znalosti-kniha-knihovna-br%C3%BDle-1052014, Pixabay License)
+ps_3.png (https://pixabay.com/cs/photos/knihy-knihkupectv%C3%AD-kniha-%C4%8Dten%C3%AD-1204029, Pixabay License)
+ps_4.png (https://pixabay.com/cs/photos/rozmazat-rozmazan%C3%A9-kniha-1283865, Pixabay License)
+ps_5.png (https://pixabay.com/cs/photos/otev%C5%99en%C3%A1-kniha-knihovna-vzd%C4%9Bl%C3%A1v%C3%A1n%C3%AD-1428428, Pixabay License)
+ps_6.png (https://pixabay.com/cs/photos/literatura-knihovna-znalosti-3091212, Pixabay License)
+ps_7.png (https://pixabay.com/cs/photos/znalosti-kniha-knihovna-br%C3%BDle-1052011, Pixabay License)
+ps_8.png (https://pixabay.com/cs/photos/kniha-bible-p%C3%ADsmo-otev%C5%99en%C3%A1-kniha-1210030, Pixabay License)
+
+rp_1.png (https://pixabay.com/cs/photos/knihovna-knihy-v%C4%9Bd%C4%9Bt-historicky-419254, Pixabay License)
+rp_2.png (https://pixabay.com/cs/illustrations/kniha-znak-br%C3%BDle-show-vitr%C3%ADna-1773756, Pixabay License)
+rp_3.png (https://pixabay.com/cs/photos/noviny-proud-z-leeuwardenu-444447, Pixabay License)
+
+nkp.png  (https://kramerius5.nkp.cz/logo.png)
+tel.png  (https://libereurope.eu/wp-content/uploads/2014/10/TEL-Logo-transparent-background.png)
+vsb.png  (https://www.ureka.eu/binaries/content/gallery/subsites/consortium/partners/logo-partner/vsb-tuo-logo_en.png)
+wc.png   (https://upload.wikimedia.org/wikipedia/commons/7/7e/WorldCat_Logo.png)
+wiki.png (https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/800px-Wikipedia-logo-v2.svg.png)

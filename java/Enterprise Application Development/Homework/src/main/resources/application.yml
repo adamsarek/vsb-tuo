@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:h2:./database.data
+  jpa:
+    hibernate:
+      ddl-auto: create
+javax:
+  persistence:
+    schema-generation:
+      scripts:
+        action: create
+repository: jpa
+saveTestData: true

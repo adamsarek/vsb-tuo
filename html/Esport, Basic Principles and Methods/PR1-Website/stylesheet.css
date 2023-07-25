@@ -1,0 +1,340 @@
+:root {
+	--team-blue-background: #00C;
+	--team-red-background: #C00;
+	--draw-background: #888;
+	--win-background: #6C6;
+	--lose-background: #C66;
+	--leader-background: #C90;
+}
+:focus,:active{
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+body {
+	color: #FFF;
+	font: 16px Helvetica, Arial, sans-serif;
+	background: url(img/wallpaper.jpg) #000 no-repeat fixed 50%/cover;
+	margin: 0px;
+}
+
+/* Global classes */
+.list {
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+/* Page classes */
+.background {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #000C;
+}
+.main {
+	position: relative;
+}
+.header {
+	position: sticky;
+	top: 0px;
+	z-index: 3;
+	background: #000;
+	box-shadow: 0px 0px 8px #000C;
+}
+.header > header {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	justify-items: center;
+}
+.header > header > * > *,
+.footer > footer > * > * {
+	color: #FFF;
+	line-height: 48px;
+	margin: 8px;
+	display: inline-block;
+	text-decoration: none;
+}
+.header > header a,
+.footer > footer a {
+	border-radius: 8px;
+	padding: 0px 16px;
+	opacity: 0.8;
+	transition: 0.25s;
+}
+.header > header a:hover,
+.footer > footer a:hover {
+	opacity: 1;
+}
+.header > header img {
+	border-radius: 24px;
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+}
+.body {
+	box-shadow: 0px 0px 8px #000C;
+}
+.stream {
+	background: #000;
+	max-height: 0px;
+	display: grid;
+	overflow: hidden;
+	transition: max-height 1s;
+}
+.stream.live {
+	max-height: 1056px;
+}
+.stream.player-enabled {
+	grid-template-rows: auto 0px;
+	grid-template-columns: 1fr;
+}
+.stream.chat-enabled {
+	grid-template-rows: 0px 0px;
+	grid-template-columns: 0px;
+}
+.stream.player-enabled.chat-enabled {
+	grid-template-rows: auto 336px;
+	grid-template-columns: 1fr;
+}
+.stream.landscape {
+	height: calc(100vh - 64px);
+}
+.stream.landscape.player-enabled {
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 0px;
+}
+.stream.landscape.chat-enabled {
+	grid-template-rows: 0px;
+	grid-template-columns: 0px 0px;
+}
+.stream.landscape.player-enabled.chat-enabled {
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 320px;
+}
+.stream > * {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.stream.player-enabled .stream-player,
+.stream.chat-enabled .stream-chat {
+	display: block;
+}
+.carousel {
+	position: relative;
+	background: #000C;
+}
+.carousel-list {
+	position: relative;
+	width: 100%;
+	height: 336px;
+}
+.carousel-list-item {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+.carousel-list-item.active {
+	z-index: 1;
+}
+.news-background {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: no-repeat 50%/cover;
+	opacity: 0;
+	transition: opacity 0.75s;
+}
+.carousel-list-item.active .news-background {
+	opacity: 1;
+}
+.news-body {
+	position: absolute;
+	bottom: -100%;
+	left: 64px;
+	right: 64px;
+	display: grid;
+	grid-template-rows: auto auto;
+	justify-items: left;
+	transition: bottom 0.75s;
+}
+.carousel-list-item.active .news-body {
+	bottom: 64px;
+}
+.news-body-title {
+	color: #FFF;
+	font-size: 24px;
+	background: #000C;
+	border-radius: 8px;
+	box-shadow: 0px 0px 8px #0006;
+	padding: 12px;
+	display: inline-block;
+}
+.news-body-content {
+	color: #FFF;
+	font-size: 16px;
+	background: #000C;
+	border-radius: 8px;
+	box-shadow: 0px 0px 8px #0006;
+	padding: 12px;
+	margin-top: 8px;
+	display: inline-block;
+}
+.carousel-button {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	color: #FFF;
+	font-size: 32px;
+	background: #000C;
+	border: 0;
+	border-radius: 8px;
+	box-shadow: 0px 0px 8px #0006;
+	width: 48px;
+	height: 96px;
+	margin: 0px 8px;
+	text-align: center;
+	opacity: 0.8;
+	transition: 0.25s;
+	transform: translateY(-50%);
+}
+.carousel-button:hover {
+	opacity: 1;
+}
+.carousel-button-left {
+	left: 0px;
+}
+.carousel-button-right {
+	right: 0px;
+}
+.results,
+.members,
+.trainings,
+.sponsors {
+	padding: 24px 0px;
+	text-align: center;
+}
+.results,
+.members,
+.trainings {
+	color: #000;
+	background: #FFFC;
+}
+.sponsors {
+	color: #FFF;
+	background: #000C;
+}
+.results h1,
+.members h1,
+.trainings h1,
+.sponsors h1 {
+	font-size: 32px;
+	padding: 0px 8px 24px;
+	margin: 0px;
+	text-align: center;
+}
+.results-list,
+.members-list,
+.trainings-list,
+.sponsors-list {
+	padding: 0px 8px;
+}
+.results-list,
+.members-list,
+.trainings-list {
+	display: inline-block;
+}
+.sponsors-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+	grid-gap: 8px;
+	justify-content: center;
+}
+.results-list-item,
+.members-list-item,
+.trainings-list-item {
+	height: 48px;
+	display: grid;
+	grid-gap: 8px;
+}
+.results-list-item {
+	grid-template-columns: 1fr 1fr;
+}
+.members-list-item {
+	grid-template-columns: 1fr;
+}
+.trainings-list-item {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.results-list-item > *,
+.members-list-item > *,
+.trainings-list-item > * {
+	color: #FFF;
+	background: #000;
+	border-radius: 8px;
+	box-shadow: 0px 0px 8px #888C;
+	line-height: 32px;
+	padding: 0px 8px;
+	align-self: center;
+	justify-self: stretch;
+}
+.sponsors-list-item > * {
+	height: 32px;
+	margin: 8px 0px;
+}
+.footer {
+	background: #000C;
+}
+.footer > footer {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	justify-items: center;
+}
+
+/* Size classes */
+.content-width {
+	max-width: 1280px;
+	margin: 0px auto;
+}
+.carousel-content-width {
+	max-width: 960px;
+	margin: 0px auto;
+}
+
+/* Style classes */
+.justify-left { justify-self: left; }
+.justify-center { justify-self: center; }
+.justify-right { justify-self: right; }
+
+/* Variable classes */
+.team-blue-background { background: var(--team-blue-background); }
+.team-red-background { background: var(--team-red-background); }
+.draw-background { background: var(--draw-background); }
+.win-background { background: var(--win-background); }
+.lose-background { background: var(--lose-background); }
+.leader-background { background: var(--leader-background); }
+
+/* Media */
+@media only screen and (min-width: 1280px) {
+	.stream.player-enabled {
+		grid-template-rows: 720px;
+		grid-template-columns: 1280px 0px;
+	}
+	.stream.chat-enabled {
+		grid-template-rows: 0px;
+		grid-template-columns: 0px 0px;
+	}
+	.stream.player-enabled.chat-enabled {
+		grid-template-rows: 540px;
+		grid-template-columns: 960px 320px;
+	}
+}

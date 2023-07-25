@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Currency calculator + currency rate chart</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="main.js" defer></script>
+	</head>
+	<body>
+		<section class="o-calculator u-grid">
+			<header class="o-title u-grid-item">Currency calculator</header>
+			<div class="o-content u-grid-item">
+				<label class="c-label" for="currencyFrom">From</label>
+				<select class="currencyFromSelect c-input" name="currencyFrom"></select>
+				<label class="c-label" for="currencyTo">To</label>
+				<select class="currencyToSelect c-input" name="currencyTo"></select>
+				<label class="c-label" for="amount">Amount</label>
+				<div class="amount">
+					<input class="amountInput c-input" name="amount" type="number" min="0" value="1">
+					<label class="currencyFromText c-label" for="amount"></label>
+				</div>
+				<label class="c-label" for="date">Date of exchange</label>
+				<input class="dateInput c-input" name="date" type="date">
+				<label class="c-label">Result</label>
+				<div class="result">0</div>
+			</div>
+			<div class="o-copyright u-grid-item">&copy; 2020 Adam Šárek (SAR0083)</div>
+		</section>
+		<section class="o-chart u-grid">
+			<header class="o-title u-grid-item">Currency rate</header>
+			<div id="currencyRateChart" class="u-grid-item"></div>
+		</section>
+	</body>
+</html>
